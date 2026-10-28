@@ -32,6 +32,7 @@
       <li><strong>Your latest usage numbers</strong>, cached so the widget can show them straight away.</li>
       <li><strong>Your sign-ins</strong>, in the app's own browser storage, as described above.</li>
       <li><strong>A claude.ai session key</strong>, only if you choose to paste one instead of signing in. It's stored in your Mac's Keychain (Windows: Credential Manager).</li>
+      <li><strong>A refresh log</strong> on Mac and Windows (<code>~/Library/Logs/AI Limits.log</code>, <code>%LOCALAPPDATA%\AILimits\AI Limits.log</code>) recording each refresh's percentages and any error. It never holds sign-ins.</li>
     </ul>
 
     <h3>Sign-ins the app can read from other apps</h3>
@@ -41,15 +42,16 @@
       <li><strong>Claude Code</strong> (Mac direct download and Windows only): Claude Code's login, if you've signed in to it. On a Mac it's in your Keychain; on Windows it's <code>.claude\.credentials.json</code> in your user folder. It's sent only to api.anthropic.com, to fetch your usage.</li>
       <li><strong>The Claude desktop app</strong> (Mac direct download and Windows only): the usage-limit entries Claude records in its own logs during Cowork sessions. The app uses them only when it can't get live numbers from Anthropic, and reads nothing else from those logs.</li>
     </ul>
-    <p>None of this is sent to us. Deleting the app deletes its own data, apart from a saved session key (Mac: Keychain item; Windows: Credential Manager entry), which you can remove first in Settings. The other apps' sign-ins and logs belong to those apps and stay as they are.</p>
+    <p>None of this is sent to us. Deleting the app deletes its own data (a Windows copy run from a folder rather than installed from the Microsoft Store leaves <code>%LOCALAPPDATA%\AILimits</code> behind; delete that too), apart from a saved session key (Mac: Keychain item; Windows: Credential Manager entry), which you can remove first in Settings. The other apps' sign-ins and logs belong to those apps and stay as they are.</p>
 
     <h2>Who the app talks to</h2>
-    <p>To show your usage, the app connects only to each AI provider's own website, with your own sign-in:</p>
+    <p>To show your usage, the app connects to each AI provider's own website with your own sign-in, plus any sign-in service you choose on its sign-in page (such as "Continue with Google, Apple or Microsoft", or your company's single sign-on). Those pages may load their own content from other servers, as they do in your browser.</p>
     <ul>
       <li><strong>Anthropic</strong> (claude.ai, api.anthropic.com) for Claude</li>
       <li><strong>OpenAI</strong> (chatgpt.com, and auth.openai.com when you sign in) for ChatGPT and Codex</li>
       <li><strong>Google</strong> (gemini.google.com, and accounts.google.com when you sign in) for Gemini</li>
     </ul>
+    <p>The built-in browser is the one your system provides: WebKit on Apple devices, Android System WebView on Android, and Microsoft Edge WebView2 on Windows, which is covered by Microsoft's privacy statement. On Windows, Microsoft Defender SmartScreen checks page addresses in the sign-in window, as it does in Edge.</p>
     <p>The app reads only your usage figures, never your conversations. Those websites are covered by each provider's own privacy policy, and while a page is loaded the provider may set its usual cookies in the app's browser storage. Anthropic, OpenAI and Google don't officially support third-party apps reading usage, so connecting an AI is at your own risk.</p>
 
     <h2>iCloud (Apple devices)</h2>
