@@ -22,32 +22,38 @@
       <p><strong>We don't collect any data.</strong> AI Limits has no account, no analytics, no advertising and no server of its own. Your sign-ins and usage numbers stay on your devices.</p>
     </div>
 
+    <h2>Signing in to your AIs</h2>
+    <p>You sign in to Claude, ChatGPT and Gemini inside AI Limits, on each AI's own sign-in page (claude.ai, chatgpt.com, accounts.google.com) shown in a built-in browser window. Your password goes only to that AI's provider; AI Limits never sees or stores it.</p>
+    <p>The sign-in is kept in the app's own browser storage on your device, separate from your normal browser. To refresh, the app opens the AI's usage page in a hidden built-in browser and reads only your usage figures there. Your sign-in never leaves that page. Signing out in Settings deletes that AI's sign-in and website data from the app.</p>
+
     <h2>What stays on your device</h2>
     <ul>
       <li><strong>Your settings</strong>, such as which AIs and stats to show and the theme.</li>
       <li><strong>Your latest usage numbers</strong>, cached so the widget can show them straight away.</li>
-      <li><strong>Your claude.ai session key</strong>, if you add one. It's stored in your Mac's Keychain (Windows: Credential Manager).</li>
+      <li><strong>Your sign-ins</strong>, in the app's own browser storage, as described above.</li>
+      <li><strong>A claude.ai session key</strong>, only if you choose to paste one instead of signing in. It's stored in your Mac's Keychain (Windows: Credential Manager).</li>
     </ul>
 
-    <h3>Sign-ins the app reads from other apps</h3>
-    <p>The app reads these where the other apps keep them, each time it refreshes. It doesn't copy or change them.</p>
+    <h3>Sign-ins the app can read from other apps</h3>
+    <p>These are optional extras for people who use those apps. The app uses them only for an AI you haven't signed in to inside AI Limits, reads them where the other apps keep them, and doesn't copy or change them.</p>
     <ul>
       <li><strong>Codex:</strong> the Codex app's sign-in and usage logs, in the <code>.codex</code> folder in your home folder. The Mac App Store version reads it only after you choose that folder in Settings. The Mac direct download and the Windows app read it automatically.</li>
       <li><strong>Claude Code</strong> (Mac direct download and Windows only): Claude Code's login, if you've signed in to it. On a Mac it's in your Keychain; on Windows it's <code>.claude\.credentials.json</code> in your user folder. It's sent only to api.anthropic.com, to fetch your usage.</li>
       <li><strong>The Claude desktop app</strong> (Mac direct download and Windows only): the usage-limit entries Claude records in its own logs during Cowork sessions. The app uses them only when it can't get live numbers from Anthropic, and reads nothing else from those logs.</li>
     </ul>
-    <p>None of this is sent to us. Deleting the app deletes its own data, apart from the saved session key (Mac: Keychain item; Windows: Credential Manager entry), which you can remove first in Settings. The other apps' sign-ins and logs belong to those apps and stay as they are.</p>
+    <p>None of this is sent to us. Deleting the app deletes its own data, apart from a saved session key (Mac: Keychain item; Windows: Credential Manager entry), which you can remove first in Settings. The other apps' sign-ins and logs belong to those apps and stay as they are.</p>
 
     <h2>Who the app talks to</h2>
-    <p>To show your usage, the app sends requests with your own sign-in directly to the AI provider:</p>
+    <p>To show your usage, the app connects only to each AI provider's own website, with your own sign-in:</p>
     <ul>
       <li><strong>Anthropic</strong> (claude.ai, api.anthropic.com) for Claude</li>
-      <li><strong>OpenAI</strong> (chatgpt.com) for ChatGPT and Codex</li>
+      <li><strong>OpenAI</strong> (chatgpt.com, and auth.openai.com when you sign in) for ChatGPT and Codex</li>
+      <li><strong>Google</strong> (gemini.google.com, and accounts.google.com when you sign in) for Gemini</li>
     </ul>
-    <p>Those requests fetch only your usage figures, never your conversations. They're covered by each provider's own privacy policy. The app identifies itself to Anthropic's API and to OpenAI as "AILimits". Requests to claude.ai use a standard browser identifier.</p>
+    <p>The app reads only your usage figures, never your conversations. Those websites are covered by each provider's own privacy policy, and while a page is loaded the provider may set its usual cookies in the app's browser storage. Anthropic, OpenAI and Google don't officially support third-party apps reading usage, so connecting an AI is at your own risk.</p>
 
     <h2>iCloud (Apple devices)</h2>
-    <p>The Mac App Store version can share your usage numbers with the AI Limits iPhone app through your private iCloud storage. Only the numbers are shared, never sign-ins or session keys. The data is held by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>, and we can't see it. You can turn this off in Settings → General → Show usage on iPhone.</p>
+    <p>The Mac App Store version can also share your usage numbers with the AI Limits iPhone and iPad app through your private iCloud storage, for any AI you haven't signed in to on the phone. Only the numbers are shared, never sign-ins or session keys. The data is held by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>, and we can't see it. You can turn this off in Settings → General → Show usage on iPhone.</p>
 
     <h2>Children</h2>
     <p>AI Limits isn't directed at children and collects no personal information from anyone.</p>

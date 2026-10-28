@@ -19,13 +19,17 @@
 
     <h2>Getting started</h2>
     <h3>Where's the app?</h3>
-    <p>AI Limits lives in the menu bar (look for two percentages) and as a widget on your desktop. Click the menu bar item for Settings, or right-click the widget.</p>
+    <p>On a Mac, AI Limits lives in the menu bar (look for the percentages) and as a widget on your desktop. Click the menu bar item for Settings, or right-click the widget. On Windows it sits in the notification area; on iPhone, iPad and Android, open the app and add its widget to your home screen.</p>
 
-    <h3>Connecting Claude</h3>
-    <p>Open claude.ai in your browser, then open Developer Tools → Storage (Safari) or Application (Chrome) → Cookies → https://claude.ai. Copy the value of <strong>sessionKey</strong> and paste it into Settings → AIs → Claude. The key is stored in your Keychain. Anthropic doesn't officially support third-party apps reading Claude usage, so connecting Claude is at your own risk. Signing out of claude.ai in that browser may end the session, and then you'll need to paste a new key.</p>
+    <h3>Signing in to your AIs</h3>
+    <p>Open Settings → AIs and click <strong>Sign In…</strong> next to Claude, ChatGPT or Gemini (on iPhone, iPad and Android: Settings in the app). The AI's own sign-in page opens inside AI Limits. Sign in as you normally would, and the window closes by itself when you're done. The widget fills in within a few seconds.</p>
+    <p>Your sign-in stays in AI Limits' own browser storage, separate from your normal browser, so signing out of the app never signs you out anywhere else. Anthropic, OpenAI and Google don't officially support third-party apps reading usage, so connecting an AI is at your own risk.</p>
 
-    <h3>Connecting ChatGPT · Codex</h3>
-    <p>Sign in to OpenAI's Codex app with your ChatGPT account first. Then, in Settings → AIs → ChatGPT · Codex, click <strong>Allow Access…</strong> and choose the hidden <code>.codex</code> folder in your home folder. Press ⌘⇧. in the file picker to show hidden folders.</p>
+    <h3>Signing in with Google doesn't work</h3>
+    <p>Google sometimes refuses sign-ins inside apps. If that happens, sign in to that AI with its email option instead of "Continue with Google", where it offers one. For Gemini there's no alternative yet, so please <a href="https://github.com/Silozo17/ailimits/issues/new">open an issue</a> to let us know.</p>
+
+    <h3>Other ways to connect (Mac and Windows)</h3>
+    <p>If you use OpenAI's Codex app or Claude Code, AI Limits can read their sign-ins for an AI you haven't signed in to inside the app. On a Mac you can also paste a claude.ai <strong>sessionKey</strong> under Settings → AIs → Claude → Other ways to connect.</p>
 
     <h3>Trying it without an account</h3>
     <p>Settings → General → <strong>Show sample data</strong> fills the widget with example numbers.</p>
